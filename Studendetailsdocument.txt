@@ -1,0 +1,35 @@
+Retrieve Student Data from a Text File
+
+DESCRIPTION
+Write a program that will retrieve student data from a text file and display it.
+
+Program Logic
+1. Reading the location of the text file to fpath string
+2. Included System.IO namespace
+3. Using Stream reader - Reading the file content.
+4. Using ConsoleWrite displaying the contents in the file.
+5. Closing the streamreader object 
+
+Program
+
+using System;
+using System.IO;
+
+namespace student
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string fpath = @"C:\Practice_project\Student.txt";
+            StreamReader sr = new StreamReader(fpath);
+            string fileContent = sr.ReadToEnd();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("*****Welcome to Rainbow School**** \n");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Displaying the student details");
+            Console.WriteLine(fileContent);       
+            sr.Close();
+        }
+    }
+}
